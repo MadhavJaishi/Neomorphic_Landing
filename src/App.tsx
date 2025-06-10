@@ -3,6 +3,7 @@ import Footer from "./components/elements/Footer"
 import Navbar from "./components/elements/Navbar"
 import { useSelector } from "react-redux";
 import type { RootState } from "./redux/store";
+import Hero from "./components/elements/Hero";
 
 const App = () => {
   const { darkMode } = useSelector((state: RootState) => state.darkMode);
@@ -16,15 +17,16 @@ const App = () => {
     }
   }, [darkMode]);
   return (
-    <>
-    <Navbar />
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
 
-    <main className="flex flex-col gap-y-20 md:gap-y-32 overflow:hidden">
+      <main className="flex flex-col gap-y-20 md:gap-y-32 overflow:hidden">
+        <Hero />
       
-    </main>
+      </main>
 
     <Footer />
-    </>
+    </div>
   )
 }
 
